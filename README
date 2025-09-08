@@ -1,0 +1,30 @@
+This project applied Bayesian hierarchical modeling to analyze the effects of ad exposure, timing, and day, on product conversion rates for the marketing data ( https://www.kaggle.com/datasets/faviovaz/marketing-ab-testing/data)
+
+Did the preliminary analysis to assess the influence of each feature (Frequentist approach)
+
+Then applied Bayesian analysis on the aggregate user data by group, day, and time-section, to estimate the group-level effects and quantify uncertainty
+
+Key features:
+1. Aggregated and explored conversion data by group, day, and time-section (Allows for faster run but ignores variance in ad exposure within (group, day, section)
+
+2. Built a hierarchical Bayesian model to estimate partial pooling effects
+
+3. Quantified uncertainty with full posterior distributions and credible intervals
+
+4. Compared posterior predictions to observed outcomes
+
+5. Visualized group- and cell-level conversion trends and predictive intervals
+
+Main findings:
+1. Bayesian modeling confirms group, day, and ad exposure effects on conversion.
+
+2. Provides the best slot to choose advertising to improve the lift (coversion rate compared to the baseline)
+
+3. Provides more interpretable and robust uncertainty estimates than frequentist methods.
+
+4. Highlights subtle patterns and variability not seen in classical analysis.
+
+Future improvements:
+1. Add full dependency of total ad exposure for each data point to account for the variance within each  (group, day, section)
+
+
