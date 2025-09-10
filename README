@@ -1,30 +1,34 @@
-This project applied Bayesian hierarchical modeling to analyze the effects of ad exposure, timing, and day, on product conversion rates for the marketing data ( https://www.kaggle.com/datasets/faviovaz/marketing-ab-testing/data)
+This project applies **Bayesian hierarchical modeling** to marketing A/B test data, revealing which ad exposure patterns and time slots most influence product conversions. Our analysis confirms that the total number of ads seen—and when those ads are delivered—strongly impact conversion rates, with Tuesday evenings, Monday mornings, and Sunday afternoons as the top-performing slots for advertising. Importantly, the model’s full probability distributions show that conversion rates on Friday and Saturday are consistently lower than on other days, suggesting these days are least suitable for ad campaigns. The Bayesian approach provides robust uncertainty quantification and non-trivial interaction of group with day and time slots effect.
 
-Did the preliminary analysis to assess the influence of each feature (Frequentist approach)
 
-Then applied Bayesian analysis on the aggregate user data by group, day, and time-section, to estimate the group-level effects and quantify uncertainty
+Marketing data from: https://www.kaggle.com/datasets/faviovaz/marketing-ab-testing/data
 
-Key features:
-1. Aggregated and explored conversion data by group, day, and time-section (Allows for faster run but ignores variance in ad exposure within (group, day, section)
+**Project overview:**
 
-2. Built a hierarchical Bayesian model to estimate partial pooling effects
+Performed exploratory analysis using frequentist methods to assess feature influences
 
-3. Quantified uncertainty with full posterior distributions and credible intervals
+Aggregated user conversion data by group, day, and time-section for efficient modeling
 
-4. Compared posterior predictions to observed outcomes
+Built a hierarchical Bayesian model to estimate effects at multiple levels and quantify uncertainty
 
-5. Visualized group- and cell-level conversion trends and predictive intervals
+Compared model predictions against actual outcomes for validation
 
-Main findings:
-1. Bayesian modeling confirms group, day, and ad exposure effects on conversion.
+Identified the best time slots to advertise to optimize lift over baseline rates
 
-2. Provides the best slot to choose advertising to improve the lift (coversion rate compared to the baseline)
+Visualized conversion trends, group differences, and posterior intervals for comprehensive insights
 
-3. Provides more interpretable and robust uncertainty estimates than frequentist methods.
+**Main findings:**
 
-4. Highlights subtle patterns and variability not seen in classical analysis.
+- Bayesian modeling confirms conversion rates are significantly affected by group, day, and ad exposure
 
-Future improvements:
-1. Add full dependency of total ad exposure for each data point to account for the variance within each  (group, day, section)
+- Provides interpretable probability distributions and credible intervals for all key effects
 
+- Reveals the most effective advertising time slots for campaign planning
+
+- Highlights subtle behavioral patterns missed by simpler models
+
+**Future work:**
+
+Explore group-day interaction effects for more targeted recommendations
+Extend the model to fully account for individual ad exposure variance within groups, days, and time-sections
 
